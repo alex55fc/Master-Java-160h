@@ -1,6 +1,17 @@
 package ejer1;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class main {
+	
+    public static List<Jugador> ordenarJugadoresPorGolesMarcados(List<Jugador> listaJugadores){
+    	List <Jugador> listaAux = new ArrayList<>();
+    	listaAux.addAll(listaJugadores);
+    	Collections.sort(listaAux, new OrdenJugadoresGolesMarcadosDesc());
+    	return listaAux;
+    };
 
 	public static void main(String[] args) {
 		 // Creamos los equipos
@@ -13,11 +24,36 @@ public class main {
         
         //Creamos los Jugaores
         Jugador jugador1 = new Jugador(1, "Elias", 1, equipo1);
-        Jugador jugador2 = new Jugador(2, "Pedro", 1, equipo2);
-        Jugador jugador3 = new Jugador(3, "Juan", 1, equipo3);
+        Jugador jugador2 = new Jugador(2, "Pedro", 3, equipo2);
+        Jugador jugador3 = new Jugador(3, "Juan", 4, equipo3);
         Jugador jugador4 = new Jugador(4, "Beniamin", 1, equipo4);
-        Jugador jugador5 = new Jugador(5, "Gracia", 1, equipo5);
-        Jugador jugador6 = new Jugador(6, "Alejandro", 1, equipo6);
+        Jugador jugador5 = new Jugador(5, "Gracia", 10, equipo5);
+        Jugador jugador6 = new Jugador(6, "Alejandro", 2, equipo6);
+        
+        //listas
+        List<Equipo> listaEquipos = new ArrayList<>();
+        listaEquipos.add(equipo1);
+        listaEquipos.add(equipo2);
+        listaEquipos.add(equipo3);
+        listaEquipos.add(equipo4);
+        listaEquipos.add(equipo5);
+        listaEquipos.add(equipo6);
+        
+        List<Jugador> listaJugadores = new ArrayList<>();
+        listaJugadores.add(jugador1);
+        listaJugadores.add(jugador2);
+        listaJugadores.add(jugador3);
+        listaJugadores.add(jugador4);
+        listaJugadores.add(jugador5);
+        listaJugadores.add(jugador6);
+        //
+        List<Jugador> listaDeJugadoresOrdenada;
+        
+        System.out.println("Listar los jugadores de cada equipo ordenador por goles marcados");
+        listaDeJugadoresOrdenada = ordenarJugadoresPorGolesMarcados(listaJugadores);
+        for(Jugador x : listaDeJugadoresOrdenada ) {
+        	System.out.println(x.getNombre() + " anotó: "+ x.getGolesMarcados() + " goles");
+        }
         
 	}
 
