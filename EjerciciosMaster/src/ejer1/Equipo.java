@@ -3,8 +3,8 @@ package ejer1;
 public class Equipo {
 	private int idEquipo;
 	private String nomEquipo;
-	private int partidosJugados;
 	private int partidosGanados;
+	private int partidosJugados;
 	
 	public Equipo(int idEquipo, String nomEquipo, int partidosGanados, int partidosJugados) {
 		this.idEquipo = idEquipo;

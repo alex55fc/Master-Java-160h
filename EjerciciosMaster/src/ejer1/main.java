@@ -12,15 +12,20 @@ public class main {
     	Collections.sort(listaAux, new OrdenJugadoresGolesMarcadosDesc());
     	return listaAux;
     };
-
+    public static List<Equipo> ordenarEquipoPorPartidosGanados(List<Equipo> listaEquipos){
+    	List <Equipo> listaAux = new ArrayList<>();
+    	listaAux.addAll(listaEquipos);
+    	Collections.sort(listaAux, new OrdenEquiposPartidosGanadosDesc());
+    	return listaAux;
+    }
 	public static void main(String[] args) {
 		 // Creamos los equipos
-        Equipo equipo1 = new Equipo(1, "Madrid", 10, 5);
-        Equipo equipo2 = new Equipo(2, "Barcelona", 10, 6);
-        Equipo equipo3 = new Equipo(3, "Valencia", 10, 4);
-        Equipo equipo4 = new Equipo(4, "Atlético de madrid", 10, 3);
-        Equipo equipo5 = new Equipo(5, "Zaragoza", 10, 9);
-        Equipo equipo6 = new Equipo(5, "Leganés", 10, 7);
+        Equipo equipo1 = new Equipo(1, "Madrid", 5, 10);
+        Equipo equipo2 = new Equipo(2, "Barcelona", 6, 10);
+        Equipo equipo3 = new Equipo(3, "Valencia", 4, 10);
+        Equipo equipo4 = new Equipo(4, "Atlético de madrid", 3, 10);
+        Equipo equipo5 = new Equipo(5, "Zaragoza", 9, 10);
+        Equipo equipo6 = new Equipo(5, "Leganés", 7, 10);
         
         //Creamos los Jugaores
         Jugador jugador1 = new Jugador(1, "Elias", 1, equipo1);
@@ -48,13 +53,18 @@ public class main {
         listaJugadores.add(jugador6);
         //
         List<Jugador> listaDeJugadoresOrdenada;
-        
+        List<Equipo> listaDeEquiposOrdenada;
         System.out.println("Listar los jugadores de cada equipo ordenador por goles marcados");
         listaDeJugadoresOrdenada = ordenarJugadoresPorGolesMarcados(listaJugadores);
         for(Jugador x : listaDeJugadoresOrdenada ) {
         	System.out.println(x.getNombre() + " anotó: "+ x.getGolesMarcados() + " goles");
         }
         
+        System.out.println("\nLista de los equipos ordenados por partidos ganados");
+        listaDeEquiposOrdenada = ordenarEquipoPorPartidosGanados(listaEquipos);
+        for(Equipo x : listaDeEquiposOrdenada ) {
+        	System.out.println(x.getNomEquipo() + " ganó : "+ x.getPartidosGanados()+ " partidos, habiendo jugado "+ x.getPartidosJugados()+ " partidos en total.");
+        }
 	}
 
 }
