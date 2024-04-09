@@ -2,6 +2,7 @@ package ejer1;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class main {
@@ -19,6 +20,7 @@ public class main {
     	return listaAux;
     }
 	public static void main(String[] args) {
+		Date date = new Date();
 		 // Creamos los equipos
         Equipo equipo1 = new Equipo(1, "Madrid", 5, 10);
         Equipo equipo2 = new Equipo(2, "Barcelona", 6, 10);
@@ -34,6 +36,18 @@ public class main {
         Jugador jugador4 = new Jugador(4, "Beniamin", 1, equipo4);
         Jugador jugador5 = new Jugador(5, "Gracia", 10, equipo5);
         Jugador jugador6 = new Jugador(6, "Alejandro", 2, equipo6);
+        
+        //Creamos los partidos
+        Partidos partido1 = new Partidos(1, date, equipo1, equipo2, 2, 1);
+        Partidos partido2 = new Partidos(2, date, equipo3, equipo4, 1, 1);
+        Partidos partido3 = new Partidos(3, date, equipo5, equipo6, 3, 2);
+        Partidos partido4 = new Partidos(4, date, equipo1, equipo3, 0, 2);
+        Partidos partido5 = new Partidos(5, date, equipo2, equipo4, 1, 3);
+        Partidos partido6 = new Partidos(6, date, equipo5, equipo1, 2, 2);
+        Partidos partido7 = new Partidos(7, date, equipo6, equipo2, 0, 1);
+        Partidos partido8 = new Partidos(8, date, equipo3, equipo5, 2, 2);
+        Partidos partido9 = new Partidos(9, date, equipo4, equipo6, 1, 0);
+        Partidos partido10 = new Partidos(10, date, equipo1, equipo2, 3, 2);
         
         //listas
         List<Equipo> listaEquipos = new ArrayList<>();
@@ -51,6 +65,19 @@ public class main {
         listaJugadores.add(jugador4);
         listaJugadores.add(jugador5);
         listaJugadores.add(jugador6);
+        
+        List<Partidos> listaPartidosJugados = new ArrayList<>();
+        listaPartidosJugados.add(partido1);
+        listaPartidosJugados.add(partido2);
+        listaPartidosJugados.add(partido3);
+        listaPartidosJugados.add(partido4);
+        listaPartidosJugados.add(partido5);
+        listaPartidosJugados.add(partido6);
+        listaPartidosJugados.add(partido7);
+        listaPartidosJugados.add(partido8);
+        listaPartidosJugados.add(partido9);
+        listaPartidosJugados.add(partido10);
+
         //
         List<Jugador> listaDeJugadoresOrdenada;
         List<Equipo> listaDeEquiposOrdenada;
@@ -64,6 +91,11 @@ public class main {
         listaDeEquiposOrdenada = ordenarEquipoPorPartidosGanados(listaEquipos);
         for(Equipo x : listaDeEquiposOrdenada ) {
         	System.out.println(x.getNomEquipo() + " ganó : "+ x.getPartidosGanados()+ " partidos, habiendo jugado "+ x.getPartidosJugados()+ " partidos en total.");
+        }
+        
+        System.out.println("\nLista de partidos jugados con los resultados");
+        for(Partidos x : listaPartidosJugados) {
+        	System.out.println(x.toString());
         }
 	}
 
