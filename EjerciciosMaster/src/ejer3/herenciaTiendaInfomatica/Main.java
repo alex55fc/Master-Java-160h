@@ -1,4 +1,4 @@
-package ejer3.ejerSimpleTiendaInfomatica;
+package ejer3.herenciaTiendaInfomatica;
 
 import java.util.ArrayList;
 import java.util.Arrays;

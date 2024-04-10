@@ -1,4 +1,4 @@
-package ejer3.ejerSimpleTiendaInfomatica;
+package ejer3.herenciaTiendaInfomatica;
 
 public abstract class Producto{
 	//atributo static

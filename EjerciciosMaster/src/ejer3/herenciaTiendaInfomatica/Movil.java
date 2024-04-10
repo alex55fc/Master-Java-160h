@@ -1,4 +1,4 @@
-package ejer3.ejerSimpleTiendaInfomatica;
+package ejer3.herenciaTiendaInfomatica;
 
 public class Movil extends Producto{
 	private int codMovil;
