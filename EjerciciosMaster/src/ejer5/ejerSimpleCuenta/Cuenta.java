@@ -37,7 +37,7 @@ public class Cuenta {
 		this.cantidad = cantidad;
 	}
 	
-	public boolean ingresar (double cantidadAIngresar) {
+	public boolean ingresarDinero (double cantidadAIngresar) {
 		if (cantidadAIngresar > 0) {
 			cantidad += cantidadAIngresar;
 			return true;
@@ -46,7 +46,7 @@ public class Cuenta {
 			return false;
 		}
 	}
-	public boolean retirar (double cantidadARetirar) {
+	public boolean retirarDinero (double cantidadARetirar) {
 		if(cantidadARetirar > cantidad) {
 			return false;
 		}
