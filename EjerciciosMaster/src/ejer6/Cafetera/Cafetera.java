@@ -100,6 +100,7 @@ public class Cafetera {
 	public boolean agregarCafe(int cantidadAniadir){
 		int cantidadPosibleaRellenar = capacidadMaxima - cantidadActual;
 		if(cantidadAniadir > 0 && cantidadAniadir <= cantidadPosibleaRellenar) {
+			cantidadActual += cantidadAniadir;
 			return true;
 		}
 		else {
