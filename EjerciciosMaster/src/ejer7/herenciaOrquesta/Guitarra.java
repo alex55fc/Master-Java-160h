@@ -24,5 +24,9 @@ public class Guitarra extends Instrumento {
 		this.numCuerdas = numCuerdas;
 	}
 	
+	@Override
+	public void tocar() {
+		System.out.println("Tocando instrumento "+ nombreInstrumento );
+	}
 
 }

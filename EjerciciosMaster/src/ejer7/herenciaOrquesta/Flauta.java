@@ -25,10 +25,8 @@ public class Flauta extends Instrumento{
 		this.modelo = modelo;
 	}
 	
-	@Override
 	public void tocar() {
-		super.tocar();
-		System.out.println("Soplando");
+		System.out.println("Tocando instrumento "+ nombreInstrumento +" soplando");
 	}
 	
 }
