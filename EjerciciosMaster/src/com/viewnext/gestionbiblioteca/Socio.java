@@ -1,13 +1,11 @@
 package com.viewnext.gestionbiblioteca;
 
-import java.util.Arrays;
-
 public class Socio extends Usuario{
 	private int contadorDocumentos;
-	
+
 	private static final int NUMERO_DIAS_PRESTAMO_LIBRO = 30 ;
 	private static final int NUMERO_DIAS_PRESTAMO_REVISTA= 10 ;
-	
+
 	public Socio(String dniUsuario, String nombreUsuario) {
 		super(dniUsuario, nombreUsuario);
 		vectorDocumentos= new Documento[20];
@@ -18,8 +16,8 @@ public class Socio extends Usuario{
 
 	@Override
 	public String toString() {
-		return "Socio [Documentos prestados=" + contadorDocumentos + ", dniUsuario=" + dniUsuario + ", nombreUsuario="
-				+ nombreUsuario + ", Capacidad de documentos total="+ vectorDocumentos.length + "]";
+		return "Socio [ dniUsuario=" + dniUsuario + ", nombreUsuario= " +nombreUsuario+
+				"\nDocumentos prestados=" + contadorDocumentos  + ", Capacidad de documentos total="+ vectorDocumentos.length + "]";
 	}
 	public String documentosEnPrestamo() {
 		String cadena= "";
@@ -67,6 +65,21 @@ public class Socio extends Usuario{
 		else {
 			return false;
 		}
+	}
+	/*
+	 * Metodo que devulve true si el contador es iguala la longitud maxima del vector(osea esta lleno)
+	 * y false de lo contrario(si hay espacio todavia.
+	 */
+	@Override
+	boolean vectorLleno() {
+		return contadorDocumentos == vectorDocumentos.length;
+	}
+
+
+	@Override
+	void insertarDocumento(Documento docu) {
+		vectorDocumentos[contadorDocumentos] = docu;
+		contadorDocumentos++;
 	}
 
 }

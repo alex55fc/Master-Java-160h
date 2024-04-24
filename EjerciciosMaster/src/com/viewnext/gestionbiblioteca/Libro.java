@@ -7,13 +7,24 @@ public class Libro extends Documento{
 			int anioPublicacion) {
 		super(codDocumento, tituloDocumento);
 		this.anioPublicacion = anioPublicacion;
+		this.prestado = false;
 	}
 
 	@Override
 	public String toString() {
-		return "Libro [anioPublicacion=" + anioPublicacion + ", codDocumento=" + codDocumento + ", tituloDocumento="
-				+ tituloDocumento + "]";
+		String cadena = "";
+		cadena = cadena + "El CODIGO " + codDocumento  +" pertenece al LIBRO \"" + tituloDocumento +  "\" (publicado en "
+				+ anioPublicacion + ") ";
+		if(prestado) {
+			cadena += "SI esta prestado";
+		}
+		else {
+			cadena += "NO esta prestado";
+		}
+		return cadena;
 	}
+
+
 	
 
 }

@@ -12,8 +12,8 @@ public class UsuarioOcasional extends Usuario{
 		contadorDocumentos= 0;	}
 	@Override
 	public String toString() {
-		return "Usuario ocasional [Documentos prestados=" + contadorDocumentos + ", dniUsuario=" + dniUsuario + ", nombreUsuario="
-				+ nombreUsuario + ", Capacidad de documentos total="+ vectorDocumentos.length + "]";
+		return "Usuario ocasional [dniUsuario=" + dniUsuario + ", nombreUsuario="+ nombreUsuario +
+				"\nDocumentos prestados= "+ contadorDocumentos + ", Capacidad de documentos total="+ vectorDocumentos.length + "]";
 	}
 	public String documentosEnPrestamo() {
 		String cadena= "";
@@ -61,6 +61,15 @@ public class UsuarioOcasional extends Usuario{
 		else {
 			return false;
 		}
+	}
+	@Override
+	boolean vectorLleno() {
+		return contadorDocumentos == vectorDocumentos.length;
+	}
+	@Override
+	void insertarDocumento(Documento docu) {
+		vectorDocumentos[contadorDocumentos] = docu;
+		contadorDocumentos++;		
 	}
 
 }
