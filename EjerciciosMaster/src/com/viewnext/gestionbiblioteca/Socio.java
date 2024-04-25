@@ -16,7 +16,7 @@ public class Socio extends Usuario{
 
 	@Override
 	public String toString() {
-		return "El Usuario " + nombreUsuario + " con DNI \"" + dniUsuario+
+		return "El Socio " + nombreUsuario + " con DNI \"" + dniUsuario+
 				"\" tiene " + contadorDocumentos + "documentos prestados y su capacidad maxima es de " + vectorDocumentos.length;
 	}
 	public String documentosEnPrestamo() {
