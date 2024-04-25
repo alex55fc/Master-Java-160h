@@ -24,6 +24,10 @@ public class Libro extends Documento{
 		return cadena;
 	}
 
+	public int getAnioPublicacion() {
+		return anioPublicacion;
+	}
+
 
 	
 

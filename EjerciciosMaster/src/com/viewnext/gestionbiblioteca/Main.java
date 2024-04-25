@@ -12,7 +12,7 @@ public class Main {
 		System.out.println("(2) Presta documento seleccionado");
 		System.out.println("(3) Devuelve documento actual");
 		System.out.println("(4) Busca documento");
-		System.out.println("(4) Informe prestamos");
+		System.out.println("(5) Informe prestamos");
 		System.out.println("==========================================");
 	}
 	//Metodos para usuarios 
@@ -54,8 +54,8 @@ public class Main {
 	//metodos para documentos 
 	public static List<Documento> crearDocumentosYmeterlosEnListas() {
 		List<Documento> listaDocumentos = new ArrayList<>();
-		listaDocumentos.add(new Libro(1,"Libro de la selva", 1970));
-		listaDocumentos.add(new Libro(2,"Los sanchez", 2001));
+		listaDocumentos.add(new Libro(1,"Libro", 1970));
+		listaDocumentos.add(new Libro(2,"Ser amo", 2001));
 		listaDocumentos.add(new Revista(3,"Los mas ricos del planeta"));
 		return  listaDocumentos;
 	}
@@ -72,16 +72,40 @@ public class Main {
 		}
 		return null;
 	}
+	public static List<Documento> dolverListaDocumentosConTituloEspecifico(String titulo, List<Documento> listaDocumentos) {
+		List<Documento> listaDocumentosConTituloEspecifico = new ArrayList<>();
+		
+		for (Documento docuX : listaDocumentos) {
+			if(docuX.getTituloDocumento().equalsIgnoreCase(titulo)) {
+				listaDocumentosConTituloEspecifico.add(docuX);
+			}
+		}
+		return listaDocumentosConTituloEspecifico;
+	}
+	public static String devolverInformePrestamo() {
+		String cadena = "";
+		
+		return cadena;
+	}
+	//metodos para Prestamos 
+	public static void recorreListaPrestamos(List<Prestamos> listaPrestamos) {
+		for(Prestamos prestamo : listaPrestamos) {
+			System.out.println(prestamo.toString());
+		}
+	}
 	static Documento documentoSeleccionado; 
-	
+
 	public static void main(String[] args) {
 		List<Usuario> listaUsuarios;
 		List<Documento> listaDocumentos;
+		List<Documento> listaDocumentosConTituloEspecifico;
+		List<Prestamos> listaPrestamos = new ArrayList<>();
 		Documento docu;
 		Usuario user;
+		Prestamos prestamo;
 		Scanner scanner = new Scanner(System.in);
 		int opcionAElegir, docuId;
-		String dniUser;
+		String dniUser, tituloDocu;
 
 		listaUsuarios = crearUsuariosYmeterlosEnListas();
 		listaDocumentos = crearDocumentosYmeterlosEnListas();
@@ -100,13 +124,8 @@ public class Main {
 				docuId = scanner.nextInt();
 				docu = devolverDocumento(docuId, listaDocumentos);
 				if (docu != null) {
-					if (docu.isPrestado()) {
-						System.out.println("Este documento ya esta prestado a un Usuario, escoge otro");
-					}
-					else {
-						System.out.println("Ahora escoge un usuario para prestarselo.\n");
-						documentoSeleccionado = docu;
-					}
+					System.out.println("Documento seleccionado.");
+					documentoSeleccionado = docu;
 				}
 				else{
 					System.out.println("No existe un documento con ese Id");
@@ -114,33 +133,80 @@ public class Main {
 				break;
 			case 2:
 				if (documentoSeleccionado != null) {
-					recorrerListaUsuarios(listaUsuarios);
-					System.out.print("\nEscoge a que usuario por dni haras el prestamos: ");
-					dniUser = scanner.next();
-					user = devolverUsuario(dniUser, listaUsuarios);
-					if (user != null) {
-						if(user.vectorLleno()) {
-							System.out.println("Este usuario tiene al completo la cantidad de documentos prestados posibles");
-						}
-						else {
-							user.insertarDocumento(documentoSeleccionado);
-							documentoSeleccionado.setPrestado(true);
-							System.out.println("\nDocumento prestado con exito!!, estos son los Documentos que tiene este usuario en prestamo");
-							recorrerDocumentosDelUsuario(user);
-							documentoSeleccionado = null;
-						}
+					if (documentoSeleccionado.isPrestado()) {
+						System.out.println("Este documento ya esta prestado a un Usuario");
 					}
 					else {
-						System.out.println("No existe un usuario con ese dni");
+						recorrerListaUsuarios(listaUsuarios);
+						System.out.print("\nEscoge a que usuario por dni haras el prestamos: ");
+						dniUser = scanner.next();
+						user = devolverUsuario(dniUser, listaUsuarios);
+						if (user != null) {
+							if(user.vectorLleno()) {
+								System.out.println("Este usuario tiene al completo la cantidad de documentos prestados posibles");
+							}
+							else {
+								user.insertarDocumento(documentoSeleccionado);
+								documentoSeleccionado.setPrestado(true);
+								listaPrestamos.add(new Prestamos(user, documentoSeleccionado));
+								System.out.println("\nDocumento prestado con exito!!, estos son los Documentos que tiene este usuario en prestamo");
+								recorrerDocumentosDelUsuario(user);
+								documentoSeleccionado = null;
+							}
+						}
+						else {
+							System.out.println("No existe un usuario con ese dni");
+						}
 					}
 				}
 				else {
 					System.out.println("Primero selecciona un documento.");
 				}
 				break;
+				/*
+				 * Mejorar el codigo, cuando se devuelva un libro o revista restar 1 a la cantidad de documetnos que tiene el usuario que posee el documento
+				 */
 			case 3:
+				if (documentoSeleccionado != null) {
+					if (documentoSeleccionado.isPrestado()) {
+						System.out.println(documentoSeleccionado.getTituloDocumento()+ " ya esta prestado a un Usuario, devolviendolo...Exito");
+						documentoSeleccionado.setPrestado(false);
+
+					}
+					else {
+						System.out.println(documentoSeleccionado.getTituloDocumento()+ " no esta prestado, asi que no se puede dovolver^^.\n");
+					}
+				}
+				else {
+					System.out.println("Primero selecciona un documento.");
+				}
 				break;
+				/*
+				 * Devulve una  lista con los Documentos que coincidan exactamenteo con el titulo puesto por teclado
+				 * Falla cuando el titulo tiene una separacion ejemplo: el Principito. Resolver 
+				 */
 			case 4:
+				System.out.print("Busca un documento por titulo, introduce el titulo: ");
+				tituloDocu = scanner.next();
+				listaDocumentosConTituloEspecifico = dolverListaDocumentosConTituloEspecifico(tituloDocu, listaDocumentos);
+				if(listaDocumentosConTituloEspecifico.isEmpty()) {
+					System.out.println("No se encontro ningun documente con dicho titulo");
+				}
+				else {
+					System.out.println("Aqui estan los documentos con dicho titulo: ");
+					for(Documento docuX : listaDocumentosConTituloEspecifico) {
+						System.out.println(docuX.toString());
+					}
+				}
+				
+				break;
+			case 5 :
+				if(listaPrestamos.isEmpty()) {
+					System.out.println("Aun no hubo registros de prestamos. Prueba a hacer uno primero ^^");
+				}
+				else {
+					recorreListaPrestamos(listaPrestamos);
+				}
 				break;
 			default:
 				System.out.println("Elige una opcion correcta");

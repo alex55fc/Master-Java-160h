@@ -1,5 +1,7 @@
 package com.viewnext.gestionbiblioteca;
 
+import java.util.Objects;
+
 public abstract class Documento {
 	protected int codDocumento;
 	protected String tituloDocumento;
@@ -35,6 +37,24 @@ public abstract class Documento {
 	public void setPrestado(boolean prestado) {
 		this.prestado = prestado;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(tituloDocumento);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Documento other = (Documento) obj;
+		return Objects.equals(tituloDocumento, other.tituloDocumento);
+	}
+	
 	
 
 }

@@ -12,8 +12,15 @@ public class UsuarioOcasional extends Usuario{
 		contadorDocumentos= 0;	}
 	@Override
 	public String toString() {
-		return "El Socio Ocasional " + nombreUsuario + " con DNI \"" + dniUsuario+
+		return "El Usuario Ocasional " + nombreUsuario + " con DNI \"" + dniUsuario+
 				"\" tiene " + contadorDocumentos + " documentos prestados y su capacidad maxima es de " + vectorDocumentos.length;
+	}
+	
+	public static int getNumeroDiasPrestamoLibro() {
+		return NUMERO_DIAS_PRESTAMO_LIBRO;
+	}
+	public static int getNumeroDiasPrestamoRevista() {
+		return NUMERO_DIAS_PRESTAMO_REVISTA;
 	}
 	public String documentosEnPrestamo() {
 		String cadena= "";
