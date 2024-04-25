@@ -12,8 +12,8 @@ public class UsuarioOcasional extends Usuario{
 		contadorDocumentos= 0;	}
 	@Override
 	public String toString() {
-		return "Usuario ocasional [dniUsuario=" + dniUsuario + ", nombreUsuario="+ nombreUsuario +
-				"\nDocumentos prestados= "+ contadorDocumentos + ", Capacidad de documentos total="+ vectorDocumentos.length + "]";
+		return "El Socio Ocasional " + nombreUsuario + " con DNI \"" + dniUsuario+
+				"\" tiene " + contadorDocumentos + " documentos prestados y su capacidad maxima es de " + vectorDocumentos.length;
 	}
 	public String documentosEnPrestamo() {
 		String cadena= "";
