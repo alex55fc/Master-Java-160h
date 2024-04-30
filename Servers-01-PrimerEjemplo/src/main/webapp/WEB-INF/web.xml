@@ -39,4 +39,14 @@
     <servlet-name>ServletFormulario01</servlet-name>
     <url-pattern>/ServletFormulario01</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFormulario02</display-name>
+    <servlet-name>ServletFormulario02</servlet-name>
+    <servlet-class>com.curso.ejemplo01.ServletFormulario02</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFormulario02</servlet-name>
+    <url-pattern>/ServletFormulario02</url-pattern>
+  </servlet-mapping>
 </web-app>
