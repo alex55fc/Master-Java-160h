@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejemplo radio</title>
+</head>
+<body>
+<h2>Escoge lo que quieres para tu dia en el GYM ^^:</h2>
+<br>
+	<form action="ServletFormulario04" method="post">
+		<input type="radio" name ="cursoYoga" value="Curso de yoga">Yoga
+		<br>
+		<label for="hitCursos">Escoge la intensiad del Hit en este entreno</label>
+		<select name="hitCursos">
+		  <option value="principiante">Hit para principiantes</option>
+		  <option value="medio" selected>Hit de nivel intermedio</option>
+		  <option value="avanzado">Hit avanzado</option>
+		</select>
+		<br>
+		<label for="calisteniaATrabajar">Escoge las zonas del cuerpo que quieras trabajar en este entreno</label>
+		<select name="calisteniaATrabajar" multiple>
+		  <option value="espalda">Espalda</option>
+		  <option value="pectoral">Pectoral</option>
+		  <option value="brazos">Brazos</option>
+		</select>
+		<br>
+		<input type="submit" value="Hacer rutina!">
+	</form>
+</body>
+</html>
