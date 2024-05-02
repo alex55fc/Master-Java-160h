@@ -119,4 +119,24 @@
     <servlet-name>LeerSesionProducto</servlet-name>
     <url-pattern>/LeerSesionProducto</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Redireccionar</display-name>
+    <servlet-name>Redireccionar</servlet-name>
+    <servlet-class>com.curso.transferenciaredirect.Redireccionar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Redireccionar</servlet-name>
+    <url-pattern>/Redireccionar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletBuscar</display-name>
+    <servlet-name>ServletBuscar</servlet-name>
+    <servlet-class>com.curso.transferenciaredirect.ServletBuscar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletBuscar</servlet-name>
+    <url-pattern>/ServletBuscar</url-pattern>
+  </servlet-mapping>
 </web-app>
