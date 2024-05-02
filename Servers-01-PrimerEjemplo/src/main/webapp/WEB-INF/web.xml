@@ -79,4 +79,24 @@
     <servlet-name>servletEnlace</servlet-name>
     <url-pattern>/servletEnlace</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CrearCookie</display-name>
+    <servlet-name>CrearCookie</servlet-name>
+    <servlet-class>com.curso.cookies.CrearCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CrearCookie</servlet-name>
+    <url-pattern>/CrearCookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LeerCookie</display-name>
+    <servlet-name>LeerCookie</servlet-name>
+    <servlet-class>com.curso.cookies.LeerCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LeerCookie</servlet-name>
+    <url-pattern>/LeerCookie</url-pattern>
+  </servlet-mapping>
 </web-app>
