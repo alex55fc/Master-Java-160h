@@ -69,4 +69,14 @@
     <servlet-name>ServletFormulario04</servlet-name>
     <url-pattern>/ServletFormulario04</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>servletEnlace</display-name>
+    <servlet-name>servletEnlace</servlet-name>
+    <servlet-class>com.curso.ejemplo01.servletEnlace</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletEnlace</servlet-name>
+    <url-pattern>/servletEnlace</url-pattern>
+  </servlet-mapping>
 </web-app>
