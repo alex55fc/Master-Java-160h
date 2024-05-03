@@ -139,4 +139,34 @@
     <servlet-name>ServletBuscar</servlet-name>
     <url-pattern>/ServletBuscar</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.curso.ejerciciologin.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrarCursos</display-name>
+    <servlet-name>RegistrarCursos</servlet-name>
+    <servlet-class>com.curso.ejerciciologin.RegistrarCursos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrarCursos</servlet-name>
+    <url-pattern>/RegistrarCursos</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaCursos</display-name>
+    <servlet-name>ListaCursos</servlet-name>
+    <servlet-class>com.curso.ejemplo01.ListaCursos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaCursos</servlet-name>
+    <url-pattern>/ListaCursos</url-pattern>
+  </servlet-mapping>
 </web-app>
