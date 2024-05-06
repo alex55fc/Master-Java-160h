@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.curso.ejerciciocurso.modelo.Curso;
 import com.curso.ejerciciocurso.service.CursoService;
@@ -27,10 +29,12 @@ public class CursoServlet extends HttpServlet {
 		String dificultad = request.getParameter("dificultad");
 		String nombreCurso = request.getParameter("cursoNom");
 		RequestDispatcher rd = null;
+		List<Curso> listaCursos = new ArrayList<>();
 		try {
 			int dificultadInt = Integer.parseInt(dificultad);
 			CursoService service = new CursoService();
 			Curso curso = service.crearCurso(nombreCurso, dificultadInt);
+			listaCursos = service.aniadirCursoALista(curso, listaCursos);
 			
 			HttpSession session= request.getSession();
 			session.setAttribute("curso", curso);
