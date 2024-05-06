@@ -163,7 +163,7 @@
     <description></description>
     <display-name>ListaCursos</display-name>
     <servlet-name>ListaCursos</servlet-name>
-    <servlet-class>com.curso.ejemplo01.ListaCursos</servlet-class>
+    <servlet-class>com.curso.ejerciciologin.ListaCursos</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListaCursos</servlet-name>
