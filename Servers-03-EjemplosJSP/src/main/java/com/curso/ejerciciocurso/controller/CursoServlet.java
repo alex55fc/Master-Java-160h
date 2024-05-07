@@ -29,15 +29,12 @@ public class CursoServlet extends HttpServlet {
 		String dificultad = request.getParameter("dificultad");
 		String nombreCurso = request.getParameter("cursoNom");
 		RequestDispatcher rd = null;
-		List<Curso> listaCursos = new ArrayList<>();
 		try {
 			int dificultadInt = Integer.parseInt(dificultad);
 			CursoService service = new CursoService();
 			Curso curso = service.crearCurso(nombreCurso, dificultadInt);
-			listaCursos = service.aniadirCursoALista(curso, listaCursos);
+			service.aniadirCursoALista(curso);
 			
-			HttpSession session= request.getSession();
-			session.setAttribute("curso", curso);
 			
 			rd = request.getRequestDispatcher("mostrarcursos.jsp");
 			rd.forward(request, response);
@@ -45,7 +42,7 @@ public class CursoServlet extends HttpServlet {
 			
 		}catch(NumberFormatException e) {
 			PrintWriter out = response.getWriter();
-			out.print("Contrasenia incorrecta, intentalo de nuevo");
+			out.print("Introducce datos coherentes, intentalo de nuevo");
 			rd = request.getRequestDispatcher("/formulariocrearcurso.html");
 			rd.include(request, response);
 		}

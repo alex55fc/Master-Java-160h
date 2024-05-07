@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,21 +7,29 @@
 <title>Mostrar cursos</title>
 </head>
 <body>
-	<%@ page import="jakarta.servlet.ServletException" %>
-	<%@ page import="jakarta.servlet.http.HttpServlet" %>
-	<%@ page import="jakarta.servlet.http.HttpServletRequest" %>
-	<%@ page import="jakarta.servlet.http.HttpServletResponse" %>
-	<%@ page import="jakarta.servlet.http.HttpSession" %>
-	<%@ page import="com.curso.ejerciciocurso.modelo.Curso" %>
+	<%@ page import="com.curso.ejerciciocurso.modelo.Curso"%>
+	<%@ page import="com.curso.ejerciciocurso.service.CursoService"%>
+	<%@ page import="java.util.List"%>
+	<%@ page import="java.util.ArrayList"%>
 	<%
 	
-	HttpSession ses= request.getSession();
-	Curso curso= (Curso)ses.getAttribute("curso");  %>
+	  
+	CursoService service = new CursoService();
+	List<Curso> listaCursos = new ArrayList<>();
+	listaCursos = service.devolverListaCursos();
+	%>
 
 	<h2>Cursos a los que estas apuntado</h2>
-	<ul>
-		<%  %>
-		<li></li>
-	</ul>
+	<%
+	if(listaCursos.isEmpty()){
+		out.println("No hay ningun curso en la lista");	
+	}
+	else{
+		for(Curso curso1 : listaCursos){
+			out.println(curso1.toString());%><br><%
+		}			
+	}
+
+	%>
 </body>
 </html>

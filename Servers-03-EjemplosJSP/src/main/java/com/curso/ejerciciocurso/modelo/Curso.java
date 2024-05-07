@@ -12,7 +12,7 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [nombreCurso=" + nombreCurso + ", dificultad=" + dificultad + "]";
+		return "Curso=" + nombreCurso + ", dificultad=" + dificultad;
 	}
 
 	public String getNombreCurso() {
