@@ -19,4 +19,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ServletPersona</display-name>
+    <servlet-name>ServletPersona</servlet-name>
+    <servlet-class>com.curso.ejerciciocurso2.controller.ServletPersona</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPersona</servlet-name>
+    <url-pattern>/ServletPersona</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletNotaMediaFormulario</display-name>
+    <servlet-name>ServletNotaMediaFormulario</servlet-name>
+    <servlet-class>com.curso.ejerciciocurso2.controller.ServletNotaMediaFormulario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNotaMediaFormulario</servlet-name>
+    <url-pattern>/ServletNotaMediaFormulario</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResultadosNotaMedia</display-name>
+    <servlet-name>ResultadosNotaMedia</servlet-name>
+    <servlet-class>com.curso.ejerciciocurso2.controller.ResultadosNotaMedia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResultadosNotaMedia</servlet-name>
+    <url-pattern>/ResultadosNotaMedia</url-pattern>
+  </servlet-mapping>
 </web-app>
