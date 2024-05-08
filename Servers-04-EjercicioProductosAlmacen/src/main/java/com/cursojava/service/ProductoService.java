@@ -42,7 +42,19 @@ public class ProductoService {
 		return num;
 	}
 	public boolean insertProductoEnAlmacen(Producto prod) {
-		return listaProductos.add(prod);
+	    boolean insertado = true;
+
+	    for (Producto prod1 : listaProductos) {
+	        if (prod1.getNomProducto().equalsIgnoreCase(prod.getNomProducto())) {
+	            insertado = false;
+	            break;
+	        }
+	    }
+
+	    if (insertado) {
+	        listaProductos.add(prod);
+	    }
+	    return insertado;
 	}
 	public String listaProductos() {
 		String cadena = "";

@@ -33,6 +33,21 @@
 		<td><%=prod.getSeccion() %></td>
 		<td><%=prod.getPrecio() %></td>
 		<td><%=prod.getStock() %></td>
+		<td>
+        <form action="ServletActualizarProducto" method="post">
+            <input type="hidden" name="nombre" value="<%=prod.getNomProducto() %>">
+            <input type="hidden" name="seccion" value="<%=prod.getSeccion() %>">
+            <input type="hidden" name="precio" value="<%=prod.getPrecio() %>">
+            <input type="hidden" name="stock" value="<%=prod.getStock() %>">
+            <input type="submit" value="Actualizar">
+        </form>
+    	</td>
+ 		<td>
+        <form action="listaproductos.jsp" method="post">
+            <input type="submit" value="Eliminar">
+            
+        </form>
+    	</td>
 	</tr>
 	<% } %>
 </table>
