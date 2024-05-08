@@ -1,32 +1,33 @@
 package com.cursojava.model;
 
+
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Almacen {
-	private Producto[] vectorProductos;
+	private List<Producto> listaProductos;
 
-	public Almacen() {
-		this.vectorProductos = new Producto[10];
+	public Almacen(List<Producto> listaProductos) {
+		this.listaProductos = new ArrayList<>();
 	}
-
 	@Override
 	public String toString() {
 		String cadena = "";
-		if(vectorProductos.length == 0) {
+		if(listaProductos.isEmpty()) {
 			System.out.println("El almacen esta vacio");
 		}
 		else {
-			Producto prod;
-			for(int pos = 0; pos < vectorProductos.length; pos++) {
-				prod = vectorProductos[pos];
-				cadena = cadena + prod.toString()+ "\n";
+			for(int pos = 0; pos <listaProductos.size(); pos++) {
+				Producto prod = listaProductos.get(pos);
+				cadena = cadena + prod.toString() + "\n";
 			}
 		}
 		return cadena;
 	}
-	
+
+
 	
 
 	
