@@ -56,17 +56,21 @@ public class ProductoService {
 	    }
 	    return insertado;
 	}
-	public String listaProductos() {
-		String cadena = "";
-		if(listaProductos.isEmpty()) {
-			System.out.println("El almacen esta vacio");
+	public boolean deleteProductoEnAlmacen(Producto prod) {
+		if(listaProductos.remove(prod)) {
+			return true;
 		}
 		else {
-			for(int pos = 0; pos <listaProductos.size(); pos++) {
-				Producto prod = listaProductos.get(pos);
-				cadena = cadena + prod.toString() + "\n";
-			}
+			return false;
 		}
-		return cadena;
+		
+	}
+	public Producto devolverProductoPorNombre(String nomProd) {
+	    for (Producto prod1 : listaProductos) {
+	        if (prod1.getNomProducto().equalsIgnoreCase(nomProd)) {
+	        	return prod1;
+	        }
+	    }
+	    return null;
 	}
 }

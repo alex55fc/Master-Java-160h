@@ -19,36 +19,48 @@
 	List<Producto> listaProducto= new ArrayList<>();
 	listaProducto = service.getListaProductos();
 	%>
-<table>
-	<tr>
-		<td>Nombre del producto</td>
-		<td>Seccion</td>
-		<td>Precio</td>
-		<td>Stock</td>
-	</tr>
-
-	<% for(Producto prod : listaProducto){%>
-	<tr>
-		<td><%=prod.getNomProducto()%></td>
-		<td><%=prod.getSeccion() %></td>
-		<td><%=prod.getPrecio() %></td>
-		<td><%=prod.getStock() %></td>
-		<td>
-        <form action="ServletActualizarProducto" method="post">
-            <input type="hidden" name="nombre" value="<%=prod.getNomProducto() %>">
-            <input type="hidden" name="seccion" value="<%=prod.getSeccion() %>">
-            <input type="hidden" name="precio" value="<%=prod.getPrecio() %>">
-            <input type="hidden" name="stock" value="<%=prod.getStock() %>">
-            <input type="submit" value="Actualizar">
-        </form>
-    	</td>
- 		<td>
-        <form action="listaproductos.jsp" method="post">
-            <input type="submit" value="Eliminar">
-            
-        </form>
-    	</td>
-	</tr>
-	<% } %>
-</table>
+	
+	<% 
+	if(listaProducto.isEmpty()){%>
+		<p>El almacen esta vacio, ve a insertar un producto.</p>        
+		<form action="altaproducto.html" method="post">
+        <input type="submit" value="Ir a insertar">
+    	</form> 
+    	<% 
+	}
+	else{%>
+		<table>
+		<tr>
+			<td>Nombre del producto</td>
+			<td>Seccion</td>
+			<td>Precio</td>
+			<td>Stock</td>
+		</tr>
+		<%
+		for(Producto prod : listaProducto){%>
+		<tr>
+			<td><%=prod.getNomProducto()%></td>
+			<td><%=prod.getSeccion() %></td>
+			<td><%=prod.getPrecio() %></td>
+			<td><%=prod.getStock() %></td>
+			<td>
+	        <form action="ServletProductoActualizar" method="post">
+	            <input type="hidden" name="nombre" value="<%=prod.getNomProducto() %>">
+	            <input type="submit" value="Actualizar">
+	        </form>
+	    	</td>
+	    	<td>
+    	        <form action="ServletProductoEliminar" method="post">
+            	<input type="hidden" name="nomProd" value="<%=prod.getNomProducto() %>">
+            	<input type="submit" value="Eliminar">
+        		</form>
+        	</td>
+		</tr>
+		<%  }
+		}
+		%>
+	</table>
+      	<form action="altaproducto.html" method="post">
+     	<input type="submit" value="Insertar otro producto">
+ 		</form>
 </html>

@@ -21,12 +21,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>ListaProductos</display-name>
-    <servlet-name>ListaProductos</servlet-name>
-    <servlet-class>com.cursojava.controller.ListaProductos</servlet-class>
+    <display-name>ServletProductoEliminar</display-name>
+    <servlet-name>ServletProductoEliminar</servlet-name>
+    <servlet-class>com.cursojava.controller.ServletProductoEliminar</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ListaProductos</servlet-name>
-    <url-pattern>/ListaProductos</url-pattern>
+    <servlet-name>ServletProductoEliminar</servlet-name>
+    <url-pattern>/ServletProductoEliminar</url-pattern>
   </servlet-mapping>
+  
 </web-app>
