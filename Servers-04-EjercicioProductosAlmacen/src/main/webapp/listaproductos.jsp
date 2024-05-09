@@ -22,10 +22,7 @@
 	
 	<% 
 	if(listaProducto.isEmpty()){%>
-		<p>El almacen esta vacio, ve a insertar un producto.</p>        
-		<form action="altaproducto.html" method="post">
-        <input type="submit" value="Ir a insertar">
-    	</form> 
+		<p>El almacen esta vacio, deberias insertar un producto.</p>         
     	<% 
 	}
 	else{%>
@@ -41,11 +38,11 @@
 		<tr>
 			<td><%=prod.getNomProducto()%></td>
 			<td><%=prod.getSeccion() %></td>
-			<td><%=prod.getPrecio() %></td>
+			<td><%=prod.getPrecio() %>$</td>
 			<td><%=prod.getStock() %></td>
 			<td>
-	        <form action="ServletProductoActualizar" method="post">
-	            <input type="hidden" name="nombre" value="<%=prod.getNomProducto() %>">
+	        <form action="ServletProductoActualizarRedireccion" method="post">
+	            <input type="hidden" name="nomProdEdit" value="<%=prod.getNomProducto() %>">
 	            <input type="submit" value="Actualizar">
 	        </form>
 	    	</td>
@@ -61,6 +58,6 @@
 		%>
 	</table>
       	<form action="altaproducto.html" method="post">
-     	<input type="submit" value="Insertar otro producto">
+     	<input type="submit" value="Insertar producto">
  		</form>
 </html>
