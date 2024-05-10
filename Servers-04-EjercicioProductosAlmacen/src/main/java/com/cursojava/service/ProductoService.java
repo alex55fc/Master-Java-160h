@@ -73,5 +73,24 @@ public class ProductoService {
 	    }
 	    return null;
 	}
+	public boolean existeSeccionEnAlmacen(String seccion){
+	    boolean existe = false;
+	    for (Producto prod : listaProductos) {
+	        if (seccion.equalsIgnoreCase(prod.getSeccion())) {
+	            existe = true;
+	            break;
+	        }
+	    }
+	    return existe;
+	}
+	public List<Producto> devuelveListaPorSeccion(String seccion){
+		List<Producto> listaProdAux = new ArrayList<>();
+		for(Producto prod : listaProductos) {
+	        if (seccion.equalsIgnoreCase(prod.getSeccion())) {
+	        	listaProdAux.add(prod);
+	        }
+		}
+		return listaProdAux;
+	}
 
 }

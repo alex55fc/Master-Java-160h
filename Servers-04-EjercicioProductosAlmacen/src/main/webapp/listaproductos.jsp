@@ -26,12 +26,18 @@
     	<% 
 	}
 	else{%>
-		<table>
+		<h3>Filtro de busqueda por seccion</h3>
+	        <form action="ServletBusquedaSeccion" method="post">
+	            Seccion: <input type="text" name="seccionABuscar">
+	            <input type="submit" value="Buscar">
+	        </form>
+		<table border="1">
 		<tr>
 			<td>Nombre del producto</td>
 			<td>Seccion</td>
 			<td>Precio</td>
 			<td>Stock</td>
+			<td>Acciones</td>
 		</tr>
 		<%
 		for(Producto prod : listaProducto){%>
@@ -45,12 +51,10 @@
 	            <input type="hidden" name="nomProdEdit" value="<%=prod.getNomProducto() %>">
 	            <input type="submit" value="Actualizar">
 	        </form>
-	    	</td>
-	    	<td>
     	        <form action="ServletProductoEliminar" method="post">
             	<input type="hidden" name="nomProd" value="<%=prod.getNomProducto() %>">
             	<input type="submit" value="Eliminar">
-        		</form>
+       		</form>
         	</td>
 		</tr>
 		<%  }

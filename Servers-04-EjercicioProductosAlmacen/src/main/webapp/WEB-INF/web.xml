@@ -49,4 +49,14 @@
     <servlet-name>ServletProductoActualizar</servlet-name>
     <url-pattern>/ServletProductoActualizar</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletBusquedaSeccion</display-name>
+    <servlet-name>ServletBusquedaSeccion</servlet-name>
+    <servlet-class>com.cursojava.controller.ServletBusquedaSeccion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletBusquedaSeccion</servlet-name>
+    <url-pattern>/ServletBusquedaSeccion</url-pattern>
+  </servlet-mapping>
 </web-app>
