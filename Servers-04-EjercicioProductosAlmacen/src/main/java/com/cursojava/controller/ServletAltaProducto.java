@@ -39,8 +39,8 @@ public class ServletAltaProducto extends HttpServlet {
 			stockInt= (int)service.changeStringToInt(stock);
 			precioDouble = service.changeStringToDouble(precio);
 			Producto prod = new Producto(nomProd, seccion, precioDouble,stockInt);
-			session.setAttribute("producto", prod);
 
+			//si el metodo nos permite insertamos el producto al almacen y vamos a l avista de la lista
 			if(service.insertProductoEnAlmacen(prod)) {
 				rd = request.getRequestDispatcher("/listaproductos.jsp");
 				rd.include(request, response);

@@ -26,8 +26,11 @@ public class ServletProductoActualizarRedireccion extends HttpServlet {
 		PrintWriter out= response.getWriter();
 		String nomProd = request.getParameter("nomProdEdit");
 		service = new ProductoService();
+		//comprobamos si la seccion existe
 		Producto prod = service.devolverProductoPorNombre(nomProd);
 		
+		//si existe redirigimos a otro servlet para que ejecute el actualizar
+		//usamos una sesion para poder pasar el producto que escogimos para editar
 		if(prod != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("prodEdit", prod);

@@ -14,6 +14,10 @@ public class ProductoService {
 	public static void setListaProductos(List<Producto> listaProductos) {
 		ProductoService.listaProductos = listaProductos;
 	}
+	/*
+	 * Metodos para comprobar si se pueden transformar de String a double o int
+	 * si no se puede devolvera false pero sin ningun otro cambio
+	 */
 	public boolean tryChangeStringToInt(String cadena) {
 		try {
 			int num = Integer.parseInt(cadena);
@@ -32,7 +36,11 @@ public class ProductoService {
 			return false;
 		}
 	}
-	
+	/*
+	 * Metodos que ahora si efectuan el cambio de String a int o double
+	 * no tendran ningun fallo ya que se ejecuta en el porgrama los metodos 
+	 * para comprobar si se puede cambiar la cadena o los tipos de datos deseados
+	 */
 	public double changeStringToDouble(String cadena) {
 		double num = Double.parseDouble(cadena);
 		return num;
@@ -41,6 +49,10 @@ public class ProductoService {
 		int num = Integer.parseInt(cadena);
 		return num;
 	}
+	/*
+	 * Comprobamos si existe el producto que pasamos por parametro en la lista
+	 * si existe no insertamos el producto, si no se encuentra se insertara en la lista
+	 */
 	public boolean insertProductoEnAlmacen(Producto prod) {
 	    boolean insertado = true;
 
@@ -56,6 +68,20 @@ public class ProductoService {
 	    }
 	    return insertado;
 	}
+	public boolean comprobarNombreProductoExistente(String nomProducto) {
+	    boolean existeProducto = false;
+
+	    for (Producto prod1 : listaProductos) {
+	        if (prod1.getNomProducto().equalsIgnoreCase(nomProducto)) {
+	        	existeProducto = true;
+	            break;
+	        }
+	    }
+	    return existeProducto;
+	}
+	/*
+	 * Elimina el parametro producto de la lista de productos
+	 */
 	public boolean deleteProductoEnAlmacen(Producto prod) {
 		if(listaProductos.remove(prod)) {
 			return true;
@@ -65,6 +91,10 @@ public class ProductoService {
 		}
 		
 	}
+	/*
+	 * Devuelve un producto que coincida con el String del parametro pasado
+	 * si no coincide con ningun producto de la lista devuelve null
+	 */
 	public Producto devolverProductoPorNombre(String nomProd) {
 	    for (Producto prod1 : listaProductos) {
 	        if (prod1.getNomProducto().equalsIgnoreCase(nomProd)) {
@@ -73,6 +103,10 @@ public class ProductoService {
 	    }
 	    return null;
 	}
+	/*
+	 * Comprueba si en la lista de productos existe alguna seccion  igual al string que pasamos por parametro
+	 * Si existe devolvemos true, de lo contrario false
+	 */
 	public boolean existeSeccionEnAlmacen(String seccion){
 	    boolean existe = false;
 	    for (Producto prod : listaProductos) {
@@ -83,6 +117,10 @@ public class ProductoService {
 	    }
 	    return existe;
 	}
+	/*
+	 * Debuelve una lista de productos donde tengan la misma seccion que pasamos por parametro
+	 * si no coincide ninguna devolvera la lista vacia
+	 */
 	public List<Producto> devuelveListaPorSeccion(String seccion){
 		List<Producto> listaProdAux = new ArrayList<>();
 		for(Producto prod : listaProductos) {

@@ -12,12 +12,13 @@
 <%@ page import="com.cursojava.controller.ServletAltaProducto"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
+	<
 	<% 
 	ProductoService service = new ProductoService();
 	List<Producto> listaProductoSeccion= new ArrayList<>();
+	//obtenemos el parametro del servlet y llamamos al service para tener la lista de esta seccion
 	String seccion= request.getParameter("seccionABuscar");
 	listaProductoSeccion = service.devuelveListaPorSeccion(seccion);
-
 	%>
 	<h2>Lista por seccion</h2>
 		<table border="1">

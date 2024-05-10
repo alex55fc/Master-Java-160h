@@ -24,6 +24,7 @@ public class ServletBusquedaSeccion extends HttpServlet {
 		service = new ProductoService();
 		PrintWriter out = response.getWriter();
 		
+		//Comprobamos si existe la seccion, si existe mandamos a una pagina jsp para mostrar la lista de esa seccion
 		if(service.existeSeccionEnAlmacen(seccion)) {
 			rd = request.getRequestDispatcher("/listaproductosporseccion.jsp");
 			rd.include(request, response);

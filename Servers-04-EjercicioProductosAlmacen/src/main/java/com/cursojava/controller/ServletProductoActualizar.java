@@ -31,23 +31,35 @@ public class ServletProductoActualizar extends HttpServlet {
 		String stock = request.getParameter("stock");
 		int stockInt;
 		double precioDouble;
-		if(service.tryChangeStringToDouble(precio) && service.tryChangeStringToInt(stock)) {
-			stockInt= (int)service.changeStringToInt(stock);
-			precioDouble = service.changeStringToDouble(precio);
-			
-			prod.setNomProducto(request.getParameter("nomProd"));
-			prod.setSeccion(request.getParameter("seccion"));
-			prod.setPrecio(precioDouble);
-			prod.setStock(stockInt);	
-			rd = request.getRequestDispatcher("/listaproductos.jsp");
-			rd.forward(request, response);
-			out.println("Produtcto "+ prod.getNomProducto()+ " actualizado");
-		}
-		else {
-			out.print("<em>Error en la entrada de datos</em>");
+		String nomEdit = request.getParameter("nomProd");
+		
+		//comprobamos si existe el nuevo nombre de este producto en algun producto de la lista de productos
+		if(service.comprobarNombreProductoExistente(nomEdit)) {
+			out.print("<em>Ya existe un producto con ese nombre en el almacen</em>");
 			rd = request.getRequestDispatcher("/editarproducto.jsp");
 			rd.include(request, response);
 		}
+		else {
+			//Comprobamos si el precio y stock se pueden convertir a double o int 
+			if(service.tryChangeStringToDouble(precio) && service.tryChangeStringToInt(stock)) {
+				stockInt= (int)service.changeStringToInt(stock);
+				precioDouble = service.changeStringToDouble(precio);
+				
+				prod.setNomProducto(nomEdit);
+				prod.setSeccion(request.getParameter("seccion"));
+				prod.setPrecio(precioDouble);
+				prod.setStock(stockInt);	
+				rd = request.getRequestDispatcher("/listaproductos.jsp");
+				rd.forward(request, response);
+				out.println("Produtcto "+ prod.getNomProducto()+ " actualizado");
+			}
+			else {
+				out.print("<em>Error en la entrada de datos</em>");
+				rd = request.getRequestDispatcher("/editarproducto.jsp");
+				rd.include(request, response);
+			}
+		}
+		
 	}
 
 }

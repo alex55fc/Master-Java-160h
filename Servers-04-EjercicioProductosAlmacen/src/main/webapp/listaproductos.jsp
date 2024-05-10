@@ -14,9 +14,11 @@
 <%@ page import="com.cursojava.controller.ServletAltaProducto"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
-<% 
+
+	<% 
 	ProductoService service = new ProductoService();
 	List<Producto> listaProducto= new ArrayList<>();
+	//recuperamos del servicio la lista de productos
 	listaProducto = service.getListaProductos();
 	%>
 	

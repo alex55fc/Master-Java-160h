@@ -24,7 +24,10 @@ public class ServletProductoEliminar extends HttpServlet {
 		PrintWriter out= response.getWriter();
 		String nomProd = request.getParameter("nomProd");
 		service = new ProductoService();
+		
+		//hacemos que nos devuelva un producto con el nombre seleccionado
 		Producto prod = service.devolverProductoPorNombre(nomProd);
+		//si existe el producto lo eliminamos
 		if(prod != null) {
 			if(service.deleteProductoEnAlmacen(prod)) {
 				out.println("Producto borrado con exito del almacen");
