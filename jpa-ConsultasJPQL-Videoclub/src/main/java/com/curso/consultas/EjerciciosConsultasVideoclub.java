@@ -79,6 +79,17 @@ public class EjerciciosConsultasVideoclub {
 		for (Pelicula peli : listaPeliAux) {
 			System.out.println(peli.toString());
 		}
+		listaPeliAux = null;
+		
+		System.out.println("\nMostrar las películas y el numero de peliculas que hay con ese precio");
+		TypedQuery<Object[]> consulta6 = em.createQuery("SELECT COUNT(p.precioAlquiler), p.precioAlquiler FROM Pelicula p GROUP BY p.precioAlquiler", Object[].class);
+
+
+		List<Object[]>lista = consulta6.getResultList();
+		
+		for (Object[] objeto : lista) {
+			System.out.println("Hay "+ objeto[0] + " peliculas con el precio "+ objeto[1] + "$");
+		}
 	}
 
 }
