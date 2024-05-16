@@ -17,6 +17,7 @@ public class Ejemplo05 {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("biblioteca2"); 
 		EntityManager em = emf.createEntityManager();
 		
+		//Mostrar por pantalla las categorias que tengan menos de 3 libros de la misma categoria 
 		TypedQuery<Categoria> consulta = em.createQuery("SELECT c FROM Categoria c WHERE SIZE(c.libros) < 3", Categoria.class);
 		
 		List<Categoria> categorias = consulta.getResultList();

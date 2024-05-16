@@ -17,6 +17,7 @@ public class Ejemplo03 {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("biblioteca2"); 
 		EntityManager em = emf.createEntityManager();
 		
+		//mostrar por pantalla las categorias existentes en la BD
 		TypedQuery<Categoria> consulta = em.createQuery("SELECT c FROM Categoria c", Categoria.class);
 		
 		List<Categoria> categorias = consulta.getResultList();

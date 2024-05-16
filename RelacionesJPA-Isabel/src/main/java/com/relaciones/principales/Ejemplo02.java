@@ -20,11 +20,11 @@ public class Ejemplo02 {
 		
 		em.getTransaction().begin();
 		
-		//Crear libro y añadirle una categoria nueva
+		//Crea una categoria nueva y asignarla a dos nuevos libros
 		Categoria categoria = new Categoria("Light Novel", "Novelas con cosas curiosillas");
 		
-		Libro libro1 = new Libro("B02", "Titulo 2", "Jaimito", 65);
-		Libro libro2 = new Libro("B03", "Titulo 3", "Paquillo", 99);
+		Libro libro1 = new Libro("E02", "Titulo 2", "Jaimito", 65);
+		Libro libro2 = new Libro("E03", "Titulo 3", "Paquillo", 99);
 		libro1.setCategoria(categoria);
 		libro2.setCategoria(categoria);
 		

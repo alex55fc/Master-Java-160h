@@ -18,9 +18,9 @@ public class Ejemplo01 {
 		em.getTransaction().begin();
 		
 		//Crear libro y añadirle una categoria ya existente de la BBDD
-		Libro libro1 = new Libro("B02", "Titulo 2", "Jaimito", 65);
+		Libro libro1 = new Libro("DE2", "Titulo 1", "Pedro", 65);
 		
-		Categoria categoria = em.find(Categoria.class, "Fantasía");
+		Categoria categoria = em.find(Categoria.class, "miedo");
 		libro1.setCategoria(categoria);
 		
 		em.persist(libro1);
