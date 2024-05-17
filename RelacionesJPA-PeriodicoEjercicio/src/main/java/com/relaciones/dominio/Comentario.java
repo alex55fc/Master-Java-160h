@@ -63,7 +63,7 @@ public class Comentario  implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Comentario [id=" + id + ", titulo=" + titulo + ", texto=" + texto + ", noticia=" + noticia + "]";
+		return "Comentario [id=" + id + ", titulo=" + titulo + ", texto=" + texto +"]";
 	}
 	@Override
 	public int hashCode() {

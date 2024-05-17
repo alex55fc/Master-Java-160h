@@ -1,5 +1,0 @@
--Crear proyecto Maven
--Incorporar dependencias en pom.xml
--Crear META-INF en src/main/resources
--Crear el persistence.xml en el META-INF y meterle los datos de la BBDD
--Crear las clases con los @... necesarios para igualar a la BBDD

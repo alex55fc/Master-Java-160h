@@ -1,4 +1,4 @@
-package com.relaciones.principal;
+package com.relaciones.creartablas;
 
 import jakarta.persistence.Persistence;
 
