@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -25,7 +26,8 @@ public class Noticia implements Serializable {
 	private String autor;
 	private Date fecha;
 	//este campo hace referencia a la CLASE Comentario al campo noticia(no a la db)
-	@OneToMany(mappedBy="noticia")
+	//hacemos que sea un eliminado en cascada
+	@OneToMany(mappedBy="noticia", cascade=CascadeType.ALL)
 	private List<Comentario> comentarios = new ArrayList<>();
 	public Noticia() {
 		super();

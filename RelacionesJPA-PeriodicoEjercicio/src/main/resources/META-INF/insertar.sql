@@ -1,8 +1,3 @@
-INSERT INTO Noticias (titulo, autor, fecha) VALUES
-('Huracán', 'Juan Perez', '2024-05-16'),
-('Terremoto', 'Carlos Abdul', '2024-05-15'),
-('Concierto', 'Jose Maria', '2024-05-14');
-INSERT INTO Comentarios (id, titulo, texto, noticias_titulo) VALUES
 INSERT INTO Noticias (titulo, autor, fecha) VALUES ('Huracan', 'Juan Perez', '2024-05-16');
 INSERT INTO Noticias (titulo, autor, fecha) VALUES ('Terremoto', 'Carlos Abdul', '2024-05-15');
 INSERT INTO Noticias (titulo, autor, fecha) VALUES ('Concierto', 'Jose Maria', '2024-05-14');
