@@ -34,9 +34,9 @@ ORDEN DE CREACION:
 6- Configuraciones 
 
    6.1 En la clase lanzadora añadir los paquetes que tienen clases con anotaciones de spring
-   	@EntityScan(basePackages="com.curso.model")  -->paquete donde esta la entidad
-	@EnableJpaRepositories(basePackages="com.curso.dao")--->paquete donde esta la interface que herada de JpaRepository
-	@SpringBootApplication(scanBasePackages= {"com.curso.controller", "com.curso.service"})
+   	@EntityScan(basePackages="com.gorras.model")  -->paquete donde esta la entidad
+	@EnableJpaRepositories(basePackages="com.gorras.dao")--->paquete donde esta la interface que herada de JpaRepository
+	@SpringBootApplication(scanBasePackages= {"com.gorras.controller", "com.gorras.service"})
    6.2  En el application.properties incorporar las propiedades necesarias para poder trabajar con la base de datos
    
    
