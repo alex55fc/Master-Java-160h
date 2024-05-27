@@ -8,10 +8,10 @@
 		<version>3.2.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.grado.inicio</groupId>
-	<artifactId>SpringBoot05-GradosCRUD-1</artifactId>
+	<groupId>com.gorras.inicio</groupId>
+	<artifactId>SpringBoot-05-GorrasCRUD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBoot05-GradosCRUD-1</name>
+	<name>SpringBoot-05-GorrasCRUD</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -33,19 +33,14 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.curso.inicio</groupId>
-			<artifactId>SpringBoot04-CursosCRUD</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
