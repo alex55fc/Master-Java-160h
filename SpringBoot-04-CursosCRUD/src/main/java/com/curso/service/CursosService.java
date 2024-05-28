@@ -6,8 +6,10 @@ import com.curso.model.Curso;
 
 public interface CursosService {
 	
-	//comprobar los metodos de json si son asi, sobretodo el primero de dar alta 
-	List<Curso> darAltaCurso();
+	/*
+	 * METODOS CRUD
+	 */
+	List<Curso> darAltaCurso(Curso curso);
 	List<Curso> eliminarCurso(int codCurso);
 	void actualizarDuracionCurso(int codCurso, int duracion);
 	Curso buscarCurso(int codCurso);

@@ -16,8 +16,10 @@ public class CursosServiceImpl  implements CursosService{
 	CursosDao dao;
 	
 	@Override
-	public List<Curso> darAltaCurso() {
-		return dao.findAll();
+	public List<Curso> darAltaCurso(Curso curso) {
+		dao.save(curso);
+		return dao.findAll() ;
+		
 	}
 
 	@Override
@@ -50,5 +52,6 @@ public class CursosServiceImpl  implements CursosService{
 		}
 		return listaPorRangoPrecioCursos;
 	}
+
 
 }

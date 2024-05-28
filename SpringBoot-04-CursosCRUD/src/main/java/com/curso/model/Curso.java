@@ -2,6 +2,7 @@ package com.curso.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -9,6 +10,7 @@ import jakarta.persistence.Id;
 public class Curso {
 	
 	@Id
+	@Column(name="cod_curso")
 	private int codCurso;
 	private String nombre;
 	private int duracion;

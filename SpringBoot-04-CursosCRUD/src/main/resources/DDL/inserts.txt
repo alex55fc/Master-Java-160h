@@ -1,4 +1,11 @@
-INSERT INTO Cursos (codCurso, nombre, duracion, precio) VALUES
+CREATE TABLE `sprinboot04`.`curso` (
+  `cod_curso` INT NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `duracion` INT NULL,
+  `precio` DOUBLE NULL,
+  PRIMARY KEY (`codCurso`));
+--
+INSERT INTO curso (cod_curso, nombre, duracion, precio) VALUES
 (1, 'Curso de Java', 40, 199.99),
 (2, 'Curso de Python', 35, 149.99),
 (3, 'Curso de SQL', 30, 99.99),
