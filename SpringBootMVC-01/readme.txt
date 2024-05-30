@@ -1,0 +1,1 @@
+En static creamos los html estaticos 
