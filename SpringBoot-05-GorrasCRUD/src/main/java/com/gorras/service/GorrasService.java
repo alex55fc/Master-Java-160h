@@ -8,7 +8,10 @@ public interface GorrasService {
 	/*
 	 * Metodos DAO
 	 */
-	
+	List<Gorra> listarGorras();
+	Gorra buscarGorraPorCodGorra(int codGorra);
+	void aniadirGorra(Gorra gorra);
+	List<Gorra> eliminarGorraPorCodGorra(int codGorra);
 	/*
 	 * Metodos @Query
 	 */
