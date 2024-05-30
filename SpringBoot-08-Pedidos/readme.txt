@@ -27,6 +27,6 @@ Este sera el cliente de los Microservicios conectados. En este casi si tendra ac
 	5.1 Indicar paquetes a escanear(en el Application)
 	5.2 Crear un @Bean del RestTemplate, para que nos permita la comunicacion entre servicios
 	5.3 asignar un port disponible, ya que tendremos dos servicios inciados a la vez(y originalmente usan el mismo Port)
-6- Probar el PostMan
+6- Probar el PostMan 
 
 	Probar http://localhost:9090/ejemplar/{isbn}/{titulo}/{tematica}. Si funciona en postman.
