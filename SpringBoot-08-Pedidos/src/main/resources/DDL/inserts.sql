@@ -1,0 +1,5 @@
+INSERT INTO pedidos (id_pedido, fecha_pedido, direccion_envio, nom_cliente, id_producto) VALUES (1, '2024-05-28', '123 Calle Principal, Ciudad', 'Juan Perez', 1);
+INSERT INTO pedidos (id_pedido, fecha_pedido, direccion_envio, nom_cliente, id_producto) VALUES (2, '2024-05-29', '456 Avenida Secundaria, Ciudad', 'Maria Gomez', 2);
+INSERT INTO pedidos (id_pedido, fecha_pedido, direccion_envio, nom_cliente, id_producto) VALUES (3, '2024-05-30', '789 Calle Terciaria, Ciudad', 'Carlos Martinez', 3);
+INSERT INTO pedidos (id_pedido, fecha_pedido, direccion_envio, nom_cliente, id_producto) VALUES (4, '2024-06-01', '321 Calle Cuarta, Ciudad', 'Luisa Fernandez', 4);
+INSERT INTO pedidos (id_pedido, fecha_pedido, direccion_envio, nom_cliente, id_producto) VALUES (5, '2024-06-02', '654 Avenida Quinta, Ciudad', 'Pedro Ramirez', 5);
