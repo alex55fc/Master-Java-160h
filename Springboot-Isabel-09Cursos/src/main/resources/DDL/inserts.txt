@@ -1,0 +1,5 @@
+INSERT INTO cursos_bd.cursos (nombre, duracion, precio) VALUES ('Curso de Java', 30, 200.0);
+INSERT INTO cursos_bd.cursos (nombre, duracion, precio) VALUES ('Curso de Python', 40, 250.0);
+INSERT INTO cursos_bd.cursos (nombre, duracion, precio) VALUES ('Curso de JavaScript', 25, 180.0);
+INSERT INTO cursos_bd.cursos (nombre, duracion, precio) VALUES ('Curso de C++', 35, 220.0);
+INSERT INTO cursos_bd.cursos (nombre, duracion, precio) VALUES ('Curso de Data Science', 50, 300.0);
