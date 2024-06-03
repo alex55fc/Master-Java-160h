@@ -4,6 +4,8 @@ import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -12,6 +14,7 @@ import jakarta.persistence.Table;
 public class Producto {
 	@Id
 	@Column(name="id_producto")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idProd;
 	private String nombre;
 	private double precio;
@@ -20,9 +23,8 @@ public class Producto {
 	public Producto() {
 		super();
 	}
-	public Producto(int idProd, String nombre, double precio, int stock) {
+	public Producto( String nombre, double precio, int stock) {
 		super();
-		this.idProd = idProd;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.stock = stock;
