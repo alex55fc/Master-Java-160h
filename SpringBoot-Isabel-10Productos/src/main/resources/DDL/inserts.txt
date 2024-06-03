@@ -1,0 +1,5 @@
+INSERT INTO productos_bd.productos (cod_producto, producto, precio_unitario, stock) VALUES (1, 'Producto A', 10.5, 100);
+INSERT INTO productos_bd.productos (cod_producto, producto, precio_unitario, stock) VALUES (2, 'Producto B', 20.0, 150);
+INSERT INTO productos_bd.productos (cod_producto, producto, precio_unitario, stock) VALUES (3, 'Producto C', 15.75, 200);
+INSERT INTO productos_bd.productos (cod_producto, producto, precio_unitario, stock) VALUES (4, 'Producto D', 30.0, 250);
+INSERT INTO productos_bd.productos (cod_producto, producto, precio_unitario, stock) VALUES (5, 'Producto E', 25.0, 300);
